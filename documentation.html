@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Tourist Attractions Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .heading a:hover {
+            text-decoration: none;
+            color: #000000;
+            margin-left: 20px;
+        }
+        .links {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 700;
+            background-color: #ffffff;
+        }
+        .links a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+        }
+        .links a:hover {
+            text-decoration: none;
+            color: #000000;
+        }
+        .doc-heading {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .response {
+            background-color: #d8d8d8;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        pre {
+            background-color: #d8d8d8;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+<meta name="description" content="Explore detailed API documentation for the World Tourist Attractions API. Learn how to retrieve tourist attractions by ID and get random famous locations around the world.">
+<meta name="keywords" content="World Tourist Attractions, API Documentation, Tourist Attractions API, Famous Locations, Tourist Attraction by ID, Random Famous Location">
+</head>
+<body>
+    <nav>
+        <div class="heading">
+            <a href="index.html" style="color: #000000;">World Tourist Attractions</a>
+        </div>
+        <div class="links">
+            <a href="https://rapidapi.com/rizzards-of-oz-rizzards-of-oz-default/api/world-tourist-attractions-api">API</a>
+            <a href="documentation.html">Documentation</a>
+        </div>
+    </nav>
+    <main>
+        <h1 class="doc-heading"> Documentation</h1>
+        <h2>Endpoints</h2>
+
+        <h3>1. Get Tourist Attraction by ID</h3>
+        <p><strong>Endpoint:</strong> <code>/api/tourist_attractions/attraction_id</code></p>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Description:</strong> Retrieves details of a specific tourist attraction by its ID.</p>
+        <p><strong>Parameters:</strong></p>
+        <ul>
+            <li><code>attraction_id</code> (integer): The ID of the tourist attraction.</li>
+        </ul>
+        <p><strong>Response:</strong></p>
+        <ul>
+            <li><code>200 OK</code>: Returns the details of the tourist attraction.</li>
+            <li><code>404 Not Found</code>: If the tourist attraction with the specified ID does not exist.</li>
+        </ul>
+        <p><strong>Example Request:</strong></p>
+        <pre><code>GET /api/tourist_attractions/1</code></pre>
+        <p><strong>Example Response:</strong></p>
+        <pre><code>{
+    "id": 1,
+    "name": "Eiffel Tower",
+    "location": "Paris, France",
+    "category": "Landmark",
+    "latitude": 48.8584,
+    "longitude": 2.2945,
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/800px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg"
+}</code></pre>
+
+        <h3>2. Get Random Famous Location</h3>
+        <p><strong>Endpoint:</strong> <code>/api/famous_locations</code></p>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Description:</strong> Retrieves a random famous location from around the world.</p>
+        <p><strong>Response:</strong></p>
+        <ul>
+            <li><code>200 OK</code>: Returns the details of a random famous location.</li>
+        </ul>
+        <p><strong>Example Request:</strong></p>
+        <pre><code>GET /api/famous_locations</code></pre>
+        <p><strong>Example Response:</strong></p>
+        <pre><code>{
+    "name": "Christ the Redeemer",
+    "location": "Rio de Janeiro, Brazil",
+    "category": "Landmark",
+    "latitude": -22.9519,
+    "longitude": -43.2105
+}</code></pre>
+
+        <h3>3. Get Random Tourist Location in India</h3>
+        <p><strong>Endpoint:</strong> <code>/api/indias_tourist_locations</code></p>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Description:</strong> Retrieves a random tourist location in India.</p>
+        <p><strong>Response:</strong></p>
+        <ul>
+            <li><code>200 OK</code>: Returns the details of a random tourist location in India.</li>
+        </ul>
+        <p><strong>Example Request:</strong></p>
+        <pre><code>GET /api/indias_tourist_locations</code></pre>
+        <p><strong>Example Response:</strong></p>
+        <pre><code>{
+    "name": "Red Fort",
+    "location": "Delhi, India",
+    "category": "Historical Site",
+    "latitude": 28.6562,
+    "longitude": 77.2410
+}</code></pre>
+
+        <h3>4. Get Wonders of the World Attractions</h3>
+        <p><strong>Endpoint:</strong> <code>/api/tourist_attractions</code></p>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Description:</strong> Retrieves a list of wonders of the world attractions.</p>
+        <p><strong>Response:</strong></p>
+        <ul>
+            <li><code>200 OK</code>: Returns a random tourist attraction that is considered a wonder of the world.</li>
+        </ul>
+        <p><strong>Example Request:</strong></p>
+        <pre><code>GET /api/tourist_attractions</code></pre>
+        <p><strong>Example Response:</strong></p>
+        <pre><code>{
+    "id": 4,
+    "name": "Great Wall of China",
+    "location": "China",
+    "category": "Landmark",
+    "latitude": 40.4319,
+    "longitude": 116.5704,
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/1200px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg"
+}</code></pre>
+    </main>
+</body>
+</html>
